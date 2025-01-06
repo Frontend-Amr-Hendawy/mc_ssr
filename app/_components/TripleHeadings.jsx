@@ -1,11 +1,7 @@
 import React from "react";
 
-interface SharedComponentProps {
-  title?: string;
-  description?: string;
-  subheading?: string;
-}
-export const TripleHeadings: React.FC<SharedComponentProps> = ({
+
+export const TripleHeadings = ({
   title,
   description,
   subheading,

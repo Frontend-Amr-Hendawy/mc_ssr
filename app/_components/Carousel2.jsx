@@ -7,7 +7,7 @@ import { LuPackageCheck } from "react-icons/lu";
 import { GoDotFill } from "react-icons/go";
 
 // import carousel from "./carousel.png";
-const Carousel: React.FC = () => {
+const Carousel = () => {
   const t = useTranslations("carousel");
   const carouselData = [
     {

@@ -1,3 +1,4 @@
+
 import React from 'react'
 import Header from './Header'
 import { useTranslations } from 'next-intl'
@@ -5,7 +6,7 @@ import { useTranslations } from 'next-intl'
 const Hero = () => {
     const t = useTranslations("mainpage");
     return (
-        <div className="bg-herobg bg-cover bg-no-repeat bg-center w-full aspect-square md:h-[70vh]">
+        <div className="bg-hero bg-cover bg-no-repeat bg-center w-full aspect-square md:h-[70vh]">
 
             <Header />
             <div className="flex flex-col justify-center items-center gap-6 w-full h-full text-center">
