@@ -5,10 +5,10 @@ import { useTranslations } from "next-intl";
 import { TripleHeadings } from "./TripleHeadings";
 // import { TripleHeadings } from "./TripleHeadings";
 
-import attend_leave from "@/public/Curved/attend_leave.png";
-import selling from "@/public/Curved/selling_over_cams.png";
-import analysis_ages_gender from "@/public/Curved/anaylsis_age_gendar.png";
-import measure_visitors from "@/public/Curved/measure_visitors.png";
+import attend_leave from "@/public/Curved/الحضور والإنصراف.png";
+import selling from "@/public/Curved/البيع عبر الكاميرات.png";
+import analysis_ages_gender from "@/public/Curved/تحديد العمر والجنس.png";
+import measure_visitors from "@/public/Curved/قياس عدد زيارات العملاء.png";
 
 const AdvancedSolutions = () => {
   const t = useTranslations("advancedSolutions");

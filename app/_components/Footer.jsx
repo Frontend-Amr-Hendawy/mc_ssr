@@ -2,11 +2,8 @@ import Image from "next/image";
 import React from "react";
 import { useTranslations } from "use-intl";
 
-// import google_app from "@/public/google_app.png";
-
-// import google_app from "@/public/google_app.png";
-// import logo_white from "/logo_white.png";
-
+import google_app from "@/public/google_app.png";
+import logo_white from "@/public/logo_white.png";
 import { FaFacebook, FaLinkedin } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { BsInstagram } from "react-icons/bs";
@@ -21,7 +18,7 @@ const Footer = () => {
 
 
       <div className="lg:w-4/12  flex flex-col items-center lg:items-start justify-between">
-        <Image src="logo_white.png" alt="White MyCash Logo" className=" pb-6 " />
+        <Image src={logo_white} alt="White MyCash Logo" className=" pb-6 " />
 
         <p className="text-1xl w-[80%] lg:me-auto pb-4 ">{t("footer_title")}</p>
 
@@ -63,7 +60,7 @@ const Footer = () => {
 
       <div className="flex flex-col gap-y-4 ">
         <p className=" lg:text-start">{t("download_app")}</p>
-        <Image src="/google_app.png" alt="google icon" className="m-auto lg:m-0 lg:me-auto"/>
+        <Image src={google_app} alt="google icon" className="m-auto lg:m-0 lg:me-auto"/>
       </div>
       </div>
 

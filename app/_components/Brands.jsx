@@ -1,4 +1,3 @@
-"use client";
 import Image from "next/image";
 import React, { useState } from "react";
 
@@ -18,7 +17,7 @@ const Brands = () => {
     { src: "/logos/stcpay.png", alt: "Stc pay" },
     { src: "/logos/zatka.png", alt: "Zatka" },
   ]
-  const [transition, ] = useState("transform 0.3s linear");
+  const [transition, ] = useState<string>("transform 0.3s linear");
   const sliderStyle = {
     transform : `translateX(-${0}%)`,
     transition: transition,

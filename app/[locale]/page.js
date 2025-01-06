@@ -1,15 +1,21 @@
 "use client";
 import React from "react";
 
-// import FeaturesSection2 from "../../mycash_newdesign/app/_components/FeatureSection2";
-import Brands from "../_components/Brands";
-// import Carousel2 from "../_components/Carousel2";
-import Hero from "../_components/Hero";
-import Solutions from "../_components/Solutions";
-// import AdvancedSolutions from "../_components/AdvancedSolutions";
-// import AboutSection2 from "../_components/AboutSection2";
-import ContactUs from "../_components/ContactUs";
-import Footer from "../_components/Footer";
+// import bg from "@/public/bg.png";
+import Brands from "../../mycash_newdesign/app/_components/Brands";
+import Solutions from "../../mycash_newdesign/app/_components/Solutions";
+import AdvancedSolutions from "../../mycash_newdesign/app/_components/AdvancedSolutions";
+// import Carousel from "./_components/Carousel";
+// import FeatureSection from "./_components/FeatureSection";
+import Footer from "../../mycash_newdesign/app/_components/Footer";
+import ContactUs from "../../mycash_newdesign/app/_components/ContactUs";
+// import MyCashAi2 from "./_components/MyCashAi2";
+import Promotion2 from "../../mycash_newdesign/app/_components/Promotion2";
+// import Promotion2 from "./_components/Promotion2";
+import Hero from "../../mycash_newdesign/app/_components/Hero";
+import AboutSection2 from "../../mycash_newdesign/app/_components/AboutSection2";
+import Carousel2 from "../../mycash_newdesign/app/_components/Carousel2";
+import FeaturesSection2 from "../../mycash_newdesign/app/_components/FeatureSection2";
 export default function Home() {
   return (
     <>
@@ -17,12 +23,19 @@ export default function Home() {
         <Hero />
         <Brands />
         <Solutions />
-        {/* <AdvancedSolutions /> */}
-        {/* <Carousel2 />
+        <AdvancedSolutions />
+        {/* <Carousel /> */}
+        <Carousel2 />
+        {/* <FeatureSection /> */}
         <FeaturesSection2 />
-        <AboutSection2 /> */}
-        {/* <ContactUs /> */}
-        {/* <Footer /> */}
+        {/* <MyCashAi /> */}
+        {/* <MyCashAi2 /> */}
+        <AboutSection2 />
+        {/* <Promotion /> */}
+        <Promotion2 />
+        {/* <Promotion2 /> */}
+        <ContactUs />
+        <Footer />
       </main>
     </>
   );

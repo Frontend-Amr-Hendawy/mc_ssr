@@ -1,5 +1,7 @@
-import "../globals.css";
+import "./globals.css";
 import Head from "next/head";
+import {useRouter} from 'next/router';
+
 
 import {  IBM_Plex_Sans, IBM_Plex_Sans_Arabic } from "next/font/google";
 
@@ -7,7 +9,7 @@ import {  IBM_Plex_Sans, IBM_Plex_Sans_Arabic } from "next/font/google";
 import {NextIntlClientProvider} from 'next-intl';
 import {getMessages} from 'next-intl/server';
 import {notFound} from 'next/navigation';
-import {routing} from '../../i18n/routing.js';
+import {routing} from '@/i18n/routing';
 
 import en from "../../messeges/en.json";
 import ar from "../../messeges/ar.json";
@@ -23,8 +25,6 @@ const ibm_plex_sans = IBM_Plex_Sans({
   subsets: ["latin"],
   display: "swap",
 });
-
-// const fontClass = locale === "en" ? ibm_plex_sans.className : ibm_plex_arabic.className;
 
 
 export default async function LocaleLayout({
@@ -47,7 +47,7 @@ export default async function LocaleLayout({
           {/* Facebook Domain Verification */}
           <meta name="facebook-domain-verification" content="kkrd506y1ao3crgzgm7wxpi08nhfsv" />
       </Head>
-      <body >
+      <body className={`${fontClass} text-sm antialiased bg-primary-10 text-primary-100 min-h-screen flex flex-col relative`}>
         <NextIntlClientProvider messages={messages}>
           {children}
         </NextIntlClientProvider>
