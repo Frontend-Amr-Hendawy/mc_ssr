@@ -2,18 +2,16 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useTranslations } from "next-intl";
-import {  useState } from "react";
-import { useLocale } from "../layout";
+import { useState } from "react";
 import { usePathname } from "next/navigation";
-
-import logo from "@/public/logo3.png";
+// import { useRouter } from "next/navigation";
+// import logo from "@/public/logo3.png";
 import { GrLanguage } from "react-icons/gr";
 
 export default function Header() {
-  const { currentLocale, setLocale } = useLocale();
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+  const [openDropdown, setOpenDropdown] = useState(null);
 
   const currentPath = usePathname();
 
@@ -33,11 +31,11 @@ export default function Header() {
   const toggleMenu = () => {
     setIsMenuOpen((prev) => !prev);
   };
-  const toggleDropdown = (dropdown: string) => {
+  const toggleDropdown = (dropdown) => {
     setOpenDropdown(openDropdown === dropdown ? null : dropdown);
   };
 
-  const updateLanguage = (newLanguage: string) => {
+  const updateLanguage = (newLanguage) => {
     setLocale(newLanguage);
   };
 
@@ -54,7 +52,7 @@ export default function Header() {
               onClick={() => updateLanguage(currentLocale === "ar" ? "en" : "ar")}
               className="text-gray-600 hover:underline font-bold px-6"
             >
-              {t(currentLocale === "ar" ? "english" : "arabic")}
+              {/* {t(locale === "ar" ? "english" : "arabic")} */}
             </button>
 
             <button className="font-bold h-full bg-primary-green text-white w-24 py-3  rounded-full">
@@ -63,7 +61,7 @@ export default function Header() {
           </div>
 
 
-          <div className="block lg:hidden ps-6" onClick={toggleMenu}>
+          <div className="block lg:hidden ps-6 text-black" onClick={toggleMenu}>
             <svg
               className="w-6 h-6 cursor-pointer"
               xmlns="http://www.w3.org/2000/svg"
@@ -134,9 +132,12 @@ export default function Header() {
           <div className="logo ">
             <Link href="/" className="">
               <Image
-                src={logo}
+                src="/logo3.png"
                 alt="MyCash Logo"
                 className={`object-contain  xxs:h-8 xs:h-10 sm:h-12 md:h-12 xxs:w-40 `}
+                width={200}
+                height={200}
+
               />
             </Link>
           </div>

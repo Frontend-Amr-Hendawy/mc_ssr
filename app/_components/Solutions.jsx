@@ -4,15 +4,11 @@ import React from "react";
 import Link from "next/link";
 import { useTranslations } from "use-intl";
 import { TripleHeadings } from "./TripleHeadings";
-import ai_solution from "@/public/ai_solution.png";
-import pos_solutions from "@/public/pos_solutions.png";
-import sales_solutions from "@/public/sales_solutions.png";
 
-// Images test 
-// import a1 from "../../public/Curved/pos/a1";
-// import a2 from "../../public/Curved/pos/a2"
-// import a3 from "../../public/Curved/pos/a3"
-// import a4 from "../../public/Curved/pos/a4"
+// import ai_solution from "@/public/ai_solution.png";
+// import pos_solutions from "@/public/pos_solutions.png";
+// import sales_solutions from "@/public/sales_solutions.png";
+
 const Solutions = () => {
   const t = useTranslations("solutions");
   return (
@@ -33,8 +29,10 @@ const Solutions = () => {
 
           <div className="rounded-2xl m-auto pt-4 px-4">
             <Image
-              src={ai_solution}
+              src="/ai_solution.png"
               alt="Solutions image"
+              width={500} height={500}
+
               className=" w-full h-full rounded-2xl"
             />
           </div>
@@ -72,8 +70,9 @@ const Solutions = () => {
 
           <div className="rounded-2xl m-auto pt-4 px-4">
             <Image
-              src={sales_solutions}
+              src="/sales_solutions.png"
               alt="Solutions image"
+              width={500} height={500}
               className=" w-full h-full rounded-2xl"
             />
           </div>
@@ -112,8 +111,10 @@ const Solutions = () => {
 
           <div className="rounded-2xl m-auto pt-4 px-4 ">
             <Image
-              src={pos_solutions}
+              src="/pos_solutions.png"
               alt="Solutions image"
+              width={500} height={500}
+
               className=" w-full  rounded-2xl"
             />
           </div>

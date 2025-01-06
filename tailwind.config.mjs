@@ -1,3 +1,4 @@
+/* eslint-disable import/no-anonymous-default-export */
 /** @type {import('tailwindcss').Config} */
 export default {
   content: [
@@ -23,8 +24,7 @@ export default {
         backgroundImage:{
           "bg_lg": "url('/cashaicamswide.png')",
           "bg_sm": "url('/mycashaismall.png')",
-          "mycash_large": "url('/cashaicamswide.png')",
-          "herobg": "url('/heronew.png')",
+          mainbg: "url('/heronew.png')",
           "solutions_bg": "url('/solutions_bg.png')",
         },
         screens : {
