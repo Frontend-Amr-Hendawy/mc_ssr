@@ -2,17 +2,31 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useTranslations } from "next-intl";
+
 import { useState } from "react";
 import { useRouter,usePathname } from "next/navigation";
 // import logo from "@/public/logo3.png";
+
+
+
+
+
+import logo from "@/public/logo3.png";
+
 import { GrLanguage } from "react-icons/gr";
 
 export default function Header() {
+  const { currentLocale, setLocale } = useLocale();
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
   const [openDropdown, setOpenDropdown] = useState(null);
   const router = useRouter()
   const {locale} = router;
+
+ 
+
+
   const currentPath = usePathname();
 
   const t = useTranslations("navbar");
@@ -31,13 +45,16 @@ export default function Header() {
   const toggleMenu = () => {
     setIsMenuOpen((prev) => !prev);
   };
-  const toggleDropdown = (dropdown) => {
+  const toggleDropdown = (dropdown: string) => {
     setOpenDropdown(openDropdown === dropdown ? null : dropdown);
   };
+
 
   // const updateLanguage = (newLanguage) => {
   //   setLocale(newLanguage);
   // };
+
+
 
 
   return (
@@ -52,7 +69,11 @@ export default function Header() {
               onClick={() => locale === "ar" ? "en" : "ar"}
               className="text-gray-600 hover:underline font-bold px-6"
             >
+
               {t(locale === "ar" ? "english" : "arabic")}
+
+
+
             </button>
 
             <button className="font-bold h-full bg-primary-green text-white w-24 py-3  rounded-full">
@@ -61,7 +82,7 @@ export default function Header() {
           </div>
 
 
-          <div className="block lg:hidden ps-6 text-black" onClick={toggleMenu}>
+          <div className="block lg:hidden ps-6" onClick={toggleMenu}>
             <svg
               className="w-6 h-6 cursor-pointer"
               xmlns="http://www.w3.org/2000/svg"
@@ -132,12 +153,9 @@ export default function Header() {
           <div className="logo ">
             <Link href="/" className="">
               <Image
-                src="/logo3.png"
+                src={logo}
                 alt="MyCash Logo"
                 className={`object-contain  xxs:h-8 xs:h-10 sm:h-12 md:h-12 xxs:w-40 `}
-                width={200}
-                height={200}
-
               />
             </Link>
           </div>
