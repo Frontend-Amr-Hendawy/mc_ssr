@@ -1,14 +1,14 @@
 import React from "react";
 import Image from "next/image";
 
-import left_cloud from "../../public/left_cloud.png";
-import right_clouds from "../../public/right_clouds.png";
+// import left_cloud from "../../public/left_cloud.png";
+// import right_clouds from "../../public/right_clouds.png";
 import mobiles from "../../public/mobiles2.png";
 const Promotion = () => {
   return (
-    <section className="relative overflow-hidden bg-red-200/20 h-[40rem]">
+    <section className="relative overflow-hidden  h-[40rem]">
 
-      <Image src={left_cloud} alt="left cloud" className="absolute bottom-0 w-[13%]" />
+      {/* <Image src={left_cloud} alt="left cloud" className="absolute bottom-0 w-[13%]" /> */}
 
       <div className="container-box text-primary-blue">
         <div className="absolute top-[50%] left-40 w-[50%] text-end space-y-4">            
@@ -19,7 +19,7 @@ const Promotion = () => {
           <Image src={mobiles} alt="mobiles" className="absolute right-40 top-20 "/>
      </div> 
 
-      <Image src={right_clouds} alt="right cloud" className="absolute right-0 bottom-0 w-[10%]" />
+      {/* <Image src={right_clouds} alt="right cloud" className="absolute right-0 bottom-0 w-[10%]" /> */}
 
     </section>
   );

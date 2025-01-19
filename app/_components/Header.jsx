@@ -2,18 +2,30 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useTranslations } from "next-intl";
-import {  useState } from "react";
-import { useLocale } from "../layout";
-import { usePathname } from "next/navigation";
+
+import { useState } from "react";
+import { useRouter,usePathname } from "next/navigation";
+// import logo from "@/public/logo3.png";
+
+
+
+
 
 import logo from "@/public/logo3.png";
+
 import { GrLanguage } from "react-icons/gr";
 
 export default function Header() {
   const { currentLocale, setLocale } = useLocale();
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+
+  const [openDropdown, setOpenDropdown] = useState(null);
+  const router = useRouter()
+  const {locale} = router;
+
+ 
+
 
   const currentPath = usePathname();
 
@@ -21,8 +33,8 @@ export default function Header() {
 
   const menuItems = [
     { href: "/", label: t("main_page") },
-    { href: "/newoffer", label: "صفحة الهبوط" },
-    { href: "/whoweare", label: t("about_us") },
+    { href: `${currentPath}/newoffer`, label: "صفحة الهبوط" },
+    { href: `${currentPath}/whoweare`, label: t("about_us") },
     { href: "#", label: t("solutions"), dropdown: true },
     { href: "/package", label: t("packages") },
     { href: "/articles", label: t("articles") },
@@ -37,9 +49,12 @@ export default function Header() {
     setOpenDropdown(openDropdown === dropdown ? null : dropdown);
   };
 
-  const updateLanguage = (newLanguage: string) => {
-    setLocale(newLanguage);
-  };
+
+  // const updateLanguage = (newLanguage) => {
+  //   setLocale(newLanguage);
+  // };
+
+
 
 
   return (
@@ -51,10 +66,14 @@ export default function Header() {
 
           <div className="buttons hidden lg:block">
             <button
-              onClick={() => updateLanguage(currentLocale === "ar" ? "en" : "ar")}
+              onClick={() => locale === "ar" ? "en" : "ar"}
               className="text-gray-600 hover:underline font-bold px-6"
             >
-              {t(currentLocale === "ar" ? "english" : "arabic")}
+
+              {t(locale === "ar" ? "english" : "arabic")}
+
+
+
             </button>
 
             <button className="font-bold h-full bg-primary-green text-white w-24 py-3  rounded-full">
@@ -154,10 +173,10 @@ export default function Header() {
                 <GrLanguage />
               </div>
               <button
-                onClick={() => updateLanguage(currentLocale === "ar" ? "en" : "ar")}
+                onClick={() => updateLanguage(locale === "ar" ? "en" : "ar")}
                 className="text-gray-600 hover:underline font-bold border-b-2 border-transparent hover:border-primary-grey-grey transition-all duration-200 "
               >
-                {t(currentLocale === "ar" ? "arabic" : "english")}
+                {t(locale === "ar" ? "arabic" : "english")}
               </button>
 
             </div>

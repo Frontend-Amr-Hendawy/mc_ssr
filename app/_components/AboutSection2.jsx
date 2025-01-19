@@ -1,18 +1,19 @@
 
-
+"use client ";
 import React from "react";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
 import mycashaismall from "@/public/img-about.png";
-
-import { useLocale } from "../layout";
+import { useRouter } from "next/navigation";
+// import { useLocale } from "../layout";
 import Link from "next/link";
 // import { FaCircle } from "react-icons/fa6";
 
 function AboutSection2() {
-  const { currentLocale } = useLocale();
-  console.log(currentLocale);
+  // const { currentLocale } = useLocale();
+  // console.log(currentLocale);
   const t = useTranslations("mycashai");
+  const { locale } = useRouter(); 
 
   return (
     <section className="relative overflow-hidden pt-1">
@@ -26,7 +27,7 @@ function AboutSection2() {
                 {t("title")}
               </h2>
               <p
-                className={`text-lg sm:text-xl lg:text-lg lg:text-center text-center w-full ${currentLocale === "ar" ? "pl-14 text-center" : "lg:text-end"
+                className={`text-lg sm:text-xl lg:text-lg lg:text-center text-center w-full ${locale === "ar" ? "pl-14 text-center" : "lg:text-end"
                   }  pb-6 leading-relaxed `}
               >
                 {t("description_title_l1")}
@@ -83,11 +84,11 @@ function AboutSection2() {
 
         <div className="relative max-w-full lg:max-w-[51%] xl:max-w-[58%] aspect-[145/100] w-full">
           <Image
-            src={mycashaismall}
+            src="/img-about.png"
             height={1450}
             width={1000}
 
-            className={`aspect-[145/100] min-w-full ${currentLocale === "ar" ? "transform scale-x-[-1]" : ""
+            className={`aspect-[145/100] min-w-full ${locale === "ar" ? "transform scale-x-[-1]" : ""
               }`}
             alt="mycashai"
           />
